@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		83CE787C1FBE21B10056B9A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CE787B1FBE21B10056B9A6 /* AppDelegate.swift */; };
-		83CE787E1FBE21B10056B9A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CE787D1FBE21B10056B9A6 /* ViewController.swift */; };
 		83CE78811FBE21B10056B9A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CE787F1FBE21B10056B9A6 /* Main.storyboard */; };
 		83CE78841FBE21B10056B9A6 /* WeatherMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83CE78821FBE21B10056B9A6 /* WeatherMe.xcdatamodeld */; };
 		83CE78861FBE21B10056B9A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83CE78851FBE21B10056B9A6 /* Assets.xcassets */; };
 		83CE78891FBE21B10056B9A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CE78871FBE21B10056B9A6 /* LaunchScreen.storyboard */; };
 		83CE78941FBE21B20056B9A6 /* WeatherMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CE78931FBE21B20056B9A6 /* WeatherMeTests.swift */; };
+		83CE78A01FBE287A0056B9A6 /* RKJHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CE789F1FBE287A0056B9A6 /* RKJHomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +29,6 @@
 /* Begin PBXFileReference section */
 		83CE78781FBE21B10056B9A6 /* WeatherMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83CE787B1FBE21B10056B9A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		83CE787D1FBE21B10056B9A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		83CE78801FBE21B10056B9A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83CE78831FBE21B10056B9A6 /* WeatherMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherMe.xcdatamodel; sourceTree = "<group>"; };
 		83CE78851FBE21B10056B9A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		83CE788F1FBE21B20056B9A6 /* WeatherMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83CE78931FBE21B20056B9A6 /* WeatherMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMeTests.swift; sourceTree = "<group>"; };
 		83CE78951FBE21B20056B9A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83CE789F1FBE287A0056B9A6 /* RKJHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RKJHomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +79,8 @@
 		83CE787A1FBE21B10056B9A6 /* WeatherMe */ = {
 			isa = PBXGroup;
 			children = (
+				83CE789E1FBE28630056B9A6 /* Controllers */,
 				83CE787B1FBE21B10056B9A6 /* AppDelegate.swift */,
-				83CE787D1FBE21B10056B9A6 /* ViewController.swift */,
 				83CE787F1FBE21B10056B9A6 /* Main.storyboard */,
 				83CE78851FBE21B10056B9A6 /* Assets.xcassets */,
 				83CE78871FBE21B10056B9A6 /* LaunchScreen.storyboard */,
@@ -97,6 +97,14 @@
 				83CE78951FBE21B20056B9A6 /* Info.plist */,
 			);
 			path = WeatherMeTests;
+			sourceTree = "<group>";
+		};
+		83CE789E1FBE28630056B9A6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				83CE789F1FBE287A0056B9A6 /* RKJHomeViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83CE787E1FBE21B10056B9A6 /* ViewController.swift in Sources */,
+				83CE78A01FBE287A0056B9A6 /* RKJHomeViewController.swift in Sources */,
 				83CE78841FBE21B10056B9A6 /* WeatherMe.xcdatamodeld in Sources */,
 				83CE787C1FBE21B10056B9A6 /* AppDelegate.swift in Sources */,
 			);
