@@ -41,6 +41,9 @@
                                         <state key="normal" title="Search">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="searchTapped:" destination="y8Z-Tk-Gtz" eventType="touchUpInside" id="41u-6T-Aqi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.5450980392" blue="0.68235294120000001" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
@@ -58,6 +61,45 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RPT-At-if4">
                                 <rect key="frame" x="0.0" y="144" width="375" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationCell" rowHeight="283" id="DEj-bA-pde" customClass="LocationCell" customModule="WeatherMe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="283"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DEj-bA-pde" id="8Vg-P1-NTW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="282.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wyf-UV-15V">
+                                                    <rect key="frame" x="16" y="16" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="DPu-5C-bjX"/>
+                                                        <constraint firstAttribute="height" constant="70" id="MUf-4X-3x1"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQh-2S-kUD">
+                                                    <rect key="frame" x="94" y="26" width="265" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="IHk-zZ-Dea"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="NQh-2S-kUD" secondAttribute="trailing" constant="16" id="GWR-Qg-zSI"/>
+                                                <constraint firstItem="NQh-2S-kUD" firstAttribute="centerY" secondItem="Wyf-UV-15V" secondAttribute="centerY" id="QKR-ly-Y7P"/>
+                                                <constraint firstItem="NQh-2S-kUD" firstAttribute="leading" secondItem="Wyf-UV-15V" secondAttribute="trailing" constant="8" id="gxh-KK-BJq"/>
+                                                <constraint firstItem="Wyf-UV-15V" firstAttribute="top" secondItem="8Vg-P1-NTW" secondAttribute="top" constant="16" id="mBC-2H-1Lj"/>
+                                                <constraint firstItem="Wyf-UV-15V" firstAttribute="leading" secondItem="8Vg-P1-NTW" secondAttribute="leading" constant="16" id="snj-nE-fe4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="NQh-2S-kUD" id="TD7-mX-CTC"/>
+                                            <outlet property="weatherIcon" destination="Wyf-UV-15V" id="vM4-I9-73F"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.089835263788700104" green="0.51725953817367554" blue="0.75006502866744995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -73,6 +115,11 @@
                         <viewLayoutGuide key="safeArea" id="wub-pU-Y7P"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weather" id="JFF-pq-jQa"/>
+                    <connections>
+                        <outlet property="searchButton" destination="d11-Kv-odK" id="LR8-hJ-ium"/>
+                        <outlet property="searchField" destination="2Lg-vD-jtI" id="igg-1V-rpQ"/>
+                        <outlet property="tableView" destination="RPT-At-if4" id="PzX-jl-NjL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beq-qZ-dKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

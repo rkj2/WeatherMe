@@ -15,6 +15,9 @@
 		83CE78941FBE21B20056B9A6 /* WeatherMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CE78931FBE21B20056B9A6 /* WeatherMeTests.swift */; };
 		83CE78A01FBE287A0056B9A6 /* RKJHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CE789F1FBE287A0056B9A6 /* RKJHomeViewController.swift */; };
 		83CE78A41FBE2AB40056B9A6 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CE78A31FBE2AB40056B9A6 /* Weather.swift */; };
+		83CE78A71FBE2DCD0056B9A6 /* WeatherWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CE78A61FBE2DCD0056B9A6 /* WeatherWebService.swift */; };
+		83CE78A91FBE3CF00056B9A6 /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CE78A81FBE3CF00056B9A6 /* WeatherDataSource.swift */; };
+		83CE78AC1FBE3DB80056B9A6 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CE78AB1FBE3DB80056B9A6 /* LocationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		83CE78951FBE21B20056B9A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83CE789F1FBE287A0056B9A6 /* RKJHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RKJHomeViewController.swift; sourceTree = "<group>"; };
 		83CE78A31FBE2AB40056B9A6 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		83CE78A61FBE2DCD0056B9A6 /* WeatherWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWebService.swift; sourceTree = "<group>"; };
+		83CE78A81FBE3CF00056B9A6 /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
+		83CE78AB1FBE3DB80056B9A6 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,8 @@
 		83CE787A1FBE21B10056B9A6 /* WeatherMe */ = {
 			isa = PBXGroup;
 			children = (
+				83CE78AA1FBE3D980056B9A6 /* UI */,
+				83CE78A51FBE2DB60056B9A6 /* Services */,
 				83CE78A21FBE2A940056B9A6 /* DataSources */,
 				83CE78A11FBE2A890056B9A6 /* Models */,
 				83CE789E1FBE28630056B9A6 /* Controllers */,
@@ -122,8 +130,25 @@
 		83CE78A21FBE2A940056B9A6 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				83CE78A81FBE3CF00056B9A6 /* WeatherDataSource.swift */,
 			);
 			path = DataSources;
+			sourceTree = "<group>";
+		};
+		83CE78A51FBE2DB60056B9A6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				83CE78A61FBE2DCD0056B9A6 /* WeatherWebService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		83CE78AA1FBE3D980056B9A6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				83CE78AB1FBE3DB80056B9A6 /* LocationCell.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +257,10 @@
 				83CE78A41FBE2AB40056B9A6 /* Weather.swift in Sources */,
 				83CE78A01FBE287A0056B9A6 /* RKJHomeViewController.swift in Sources */,
 				83CE78841FBE21B10056B9A6 /* WeatherMe.xcdatamodeld in Sources */,
+				83CE78A71FBE2DCD0056B9A6 /* WeatherWebService.swift in Sources */,
+				83CE78AC1FBE3DB80056B9A6 /* LocationCell.swift in Sources */,
 				83CE787C1FBE21B10056B9A6 /* AppDelegate.swift in Sources */,
+				83CE78A91FBE3CF00056B9A6 /* WeatherDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,13 +11,35 @@ import UIKit
 
 class RKJHomeViewController : UIViewController {
     
+    @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    
+    let weatherService = WeatherWebService()
+    var dataSource: WeatherDataSource?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        initializeServices()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
     
+    private func initializeServices()
+    {
+        self.dataSource = WeatherDataSource(with: weatherService, for: self.tableView)
+        self.tableView.dataSource = self.dataSource
+        self.tableView.delegate = self.dataSource
+    }
+    
+    @IBAction func searchTapped(_ sender: UIButton) {
+        if let city = self.searchField.text {
+            print("\(city)")
+            self.dataSource?.fetchData(for: city)
+        }
+    }
     
 }

@@ -9,15 +9,33 @@
 import Foundation
 
 struct Weather {
-    var id: String
-    var zipCode: String
     var locationName: String
-    var mainWeather: String
-    var weatherDescription: String
-    var icon: String
+    var mainWeather: String?
+    var icon: String?
+    var humidity: String
     var maxTemperature: String
     var minTemperature: String
-    var humidity: String
+    
+    init?(json: [String: Any]) {
+        print("json before parsing \n \(json)")
+        guard
+            let locationName = json["name"] as? String,
+            let weatherArray = json["weather"] as? [[String:Any]],
+            let mainDict = json["main"] as? [String: Any]
+        else {
+            return nil
+        }
+        
+        self.locationName = locationName
+        self.humidity = "\(mainDict["humidity"]!)"
+        self.maxTemperature = "\(mainDict["temp_max"]!)"
+        self.minTemperature = "\(mainDict["temp_min"]!)"
+        
+        if let weatherArrayFirst = weatherArray.first {
+            self.mainWeather = weatherArrayFirst["description"] as? String
+            self.icon = weatherArrayFirst["icon"] as? String
+        }
+    }
 }
 
 extension Weather {
