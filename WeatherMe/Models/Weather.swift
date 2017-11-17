@@ -46,6 +46,22 @@ struct Weather {
 
 extension Weather {
     var fullDescription: String {
-        return "Weather at \(self.locationName)"
+        var description = [String]()
+        for item in self.weather! {
+            let nextDescription = item["description"] as! String
+            description.append(nextDescription)
+        }
+        
+        let separator = ", "
+        let full  = description.joined(separator: separator)
+        return full
+    }
+    
+    var metricMinTemp: String {
+        return "\(self.minTemperature) C"
+    }
+    
+    var metricMaxTemp: String {
+        return "\(self.maxTemperature) C"
     }
 }

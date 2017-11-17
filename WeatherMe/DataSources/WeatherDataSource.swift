@@ -21,16 +21,27 @@ class WeatherDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as! LocationCell
-        if self.locationWeather != nil {
-            cell.populate(with: self.locationWeather!)
+        
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as! LocationCell
+            if self.locationWeather != nil {
+                cell.populate(with: self.locationWeather!, at: indexPath.row)
+            }
+            return cell
+        } else {
+            let weatherCell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
+            weatherCell.populate(with: self.locationWeather!, at: indexPath.row - 1)
+            return weatherCell
         }
-        return cell
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if self.locationWeather != nil {
+            return (self.locationWeather?.weather?.count)! + 1
+        } else {
+            return 0
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,7 +49,11 @@ class WeatherDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        if indexPath.row == 0 {
+            return 200
+        } else {
+            return 80
+        }
     }
     
 }
@@ -48,6 +63,7 @@ extension WeatherDataSource {
         self.weatherService.fetchWeather(for: city) { (dictionary) in
             if let weather = Weather(json: dictionary) {
                 self.locationWeather = weather
+                print("weather array: \(self.locationWeather?.weather?.count)")
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }

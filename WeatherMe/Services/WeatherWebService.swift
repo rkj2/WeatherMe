@@ -43,7 +43,8 @@ class WeatherWebService {
             
             let keyItem = URLQueryItem(name: "appid", value: "1272cf4e833e48fa198f0134dd77b092")
             let zipItem = URLQueryItem(name: "q", value: city)
-            components.queryItems = [keyItem, zipItem]
+            let unitsTerm = URLQueryItem(name: "units", value: "metric")
+            components.queryItems = [keyItem, zipItem, unitsTerm]
             return components.url
         } else {
             return nil
