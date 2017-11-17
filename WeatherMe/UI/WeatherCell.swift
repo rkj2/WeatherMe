@@ -25,6 +25,11 @@ class WeatherCell : UITableViewCell {
             let completeUrl = WeatherWebService.urlString(for: iconUrl)
             self.weatherIcon.sd_setImage(with: completeUrl)
         }
-        
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.weatherDescription.text = ""
+        self.weatherIcon.image = nil
     }
 }

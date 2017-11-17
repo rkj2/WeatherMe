@@ -16,7 +16,6 @@ struct Weather {
     var weather: [[String: Any]]?
     
     init?(json: [String: Any]) {
-        print("json before parsing \n \(json)")
         guard
             let locationName = json["name"] as? String,
             let weatherArray = json["weather"] as? [[String:Any]],

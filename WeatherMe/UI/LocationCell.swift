@@ -22,12 +22,9 @@ class LocationCell : UITableViewCell {
     
     func populate(with weather: Weather, at index: Int) {
         self.label.text = weather.locationName
-//        let iconUrl = weather.weatherIconString(at: index)
-//        if !iconUrl.isEmpty {
             self.minTempLabel.text = weather.metricMinTemp
             self.maxTempLabel.text = weather.metricMaxTemp
            self.humidityLabel.text = weather.humidityString
-//        }
     }
     
     override func prepareForReuse() {
