@@ -41,9 +41,6 @@ class WeatherDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
         return 200
     }
     
- 
-    
-    
 }
 
 extension WeatherDataSource {

@@ -36,7 +36,7 @@ struct Weather {
     }
     
     func weatherIconString(at index: Int) -> String {
-        return self.weather![index]["icon"] as! String
+        return self.weather![index]["icon"]! as! String
     }
     
     func weatherDescription(at index: Int) -> String {

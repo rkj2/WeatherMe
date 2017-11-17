@@ -20,7 +20,11 @@ class LocationCell : UITableViewCell {
     
     func populate(with weather: Weather) {
         self.label.text = weather.locationName
-        
+        let iconUrl = weather.weatherIconString(at: 0)
+        if !iconUrl.isEmpty {
+            let completeUrl = WeatherWebService.urlString(for: iconUrl)
+            self.weatherIcon.sd_setImage(with: completeUrl)
+        }
     }
     
 }

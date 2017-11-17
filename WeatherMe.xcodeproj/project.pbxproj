@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04214BEB3D27AB4ADB04084C /* Pods_WeatherMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC6C988363E6867B0F5D1E9 /* Pods_WeatherMeTests.framework */; };
+		1AE0BC78D02C80D7E62C3B53 /* Pods_WeatherMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDCF1D31E5E198A525C5980 /* Pods_WeatherMe.framework */; };
 		83CE787C1FBE21B10056B9A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CE787B1FBE21B10056B9A6 /* AppDelegate.swift */; };
 		83CE78811FBE21B10056B9A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CE787F1FBE21B10056B9A6 /* Main.storyboard */; };
 		83CE78841FBE21B10056B9A6 /* WeatherMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83CE78821FBE21B10056B9A6 /* WeatherMe.xcdatamodeld */; };
@@ -31,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37C4E96E87B3F6F1352225EF /* Pods-WeatherMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherMe/Pods-WeatherMe.debug.xcconfig"; sourceTree = "<group>"; };
+		5AC6C988363E6867B0F5D1E9 /* Pods_WeatherMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7285713A2667C327838D52CA /* Pods-WeatherMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherMeTests/Pods-WeatherMeTests.release.xcconfig"; sourceTree = "<group>"; };
+		8345DB571FBE794900DF917A /* WeatherMe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeatherMe-Bridging-Header.h"; sourceTree = "<group>"; };
 		83CE78781FBE21B10056B9A6 /* WeatherMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83CE787B1FBE21B10056B9A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83CE78801FBE21B10056B9A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,6 +52,9 @@
 		83CE78A61FBE2DCD0056B9A6 /* WeatherWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWebService.swift; sourceTree = "<group>"; };
 		83CE78A81FBE3CF00056B9A6 /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
 		83CE78AB1FBE3DB80056B9A6 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		A0A19885158FC94E4D658018 /* Pods-WeatherMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherMeTests/Pods-WeatherMeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A3FE30428462D18BEBCA6345 /* Pods-WeatherMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherMe/Pods-WeatherMe.release.xcconfig"; sourceTree = "<group>"; };
+		CFDCF1D31E5E198A525C5980 /* Pods_WeatherMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE0BC78D02C80D7E62C3B53 /* Pods_WeatherMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04214BEB3D27AB4ADB04084C /* Pods_WeatherMeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +83,8 @@
 				83CE787A1FBE21B10056B9A6 /* WeatherMe */,
 				83CE78921FBE21B20056B9A6 /* WeatherMeTests */,
 				83CE78791FBE21B10056B9A6 /* Products */,
+				C2917589E8F1CECE0F6EF77D /* Pods */,
+				BB9A911ACB173190036046F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +111,7 @@
 				83CE78871FBE21B10056B9A6 /* LaunchScreen.storyboard */,
 				83CE788A1FBE21B10056B9A6 /* Info.plist */,
 				83CE78821FBE21B10056B9A6 /* WeatherMe.xcdatamodeld */,
+				8345DB571FBE794900DF917A /* WeatherMe-Bridging-Header.h */,
 			);
 			path = WeatherMe;
 			sourceTree = "<group>";
@@ -151,6 +165,26 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		BB9A911ACB173190036046F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFDCF1D31E5E198A525C5980 /* Pods_WeatherMe.framework */,
+				5AC6C988363E6867B0F5D1E9 /* Pods_WeatherMeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2917589E8F1CECE0F6EF77D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37C4E96E87B3F6F1352225EF /* Pods-WeatherMe.debug.xcconfig */,
+				A3FE30428462D18BEBCA6345 /* Pods-WeatherMe.release.xcconfig */,
+				A0A19885158FC94E4D658018 /* Pods-WeatherMeTests.debug.xcconfig */,
+				7285713A2667C327838D52CA /* Pods-WeatherMeTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83CE78981FBE21B20056B9A6 /* Build configuration list for PBXNativeTarget "WeatherMe" */;
 			buildPhases = (
+				67BE035FAC9014A09ABEFE2B /* [CP] Check Pods Manifest.lock */,
 				83CE78741FBE21B10056B9A6 /* Sources */,
 				83CE78751FBE21B10056B9A6 /* Frameworks */,
 				83CE78761FBE21B10056B9A6 /* Resources */,
+				5D3FDB517C0DF1EB00FB36E7 /* [CP] Embed Pods Frameworks */,
+				21E4D273CA159285065CA07B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -175,9 +212,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83CE789B1FBE21B20056B9A6 /* Build configuration list for PBXNativeTarget "WeatherMeTests" */;
 			buildPhases = (
+				E0177B2A1AC011180D177ABB /* [CP] Check Pods Manifest.lock */,
 				83CE788B1FBE21B20056B9A6 /* Sources */,
 				83CE788C1FBE21B20056B9A6 /* Frameworks */,
 				83CE788D1FBE21B20056B9A6 /* Resources */,
+				DCA6DB0637C67221777AB168 /* [CP] Embed Pods Frameworks */,
+				F5BCEBB52E50AE9152E8F61F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,6 +288,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21E4D273CA159285065CA07B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeatherMe/Pods-WeatherMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D3FDB517C0DF1EB00FB36E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeatherMe/Pods-WeatherMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67BE035FAC9014A09ABEFE2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DCA6DB0637C67221777AB168 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeatherMeTests/Pods-WeatherMeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0177B2A1AC011180D177ABB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F5BCEBB52E50AE9152E8F61F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeatherMeTests/Pods-WeatherMeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83CE78741FBE21B10056B9A6 /* Sources */ = {
@@ -411,14 +544,22 @@
 		};
 		83CE78991FBE21B20056B9A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37C4E96E87B3F6F1352225EF /* Pods-WeatherMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6952L9JMSG;
 				INFOPLIST_FILE = WeatherMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"SDWebImage\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rajivejain.com.WeatherMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WeatherMe/WeatherMe-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -426,14 +567,22 @@
 		};
 		83CE789A1FBE21B20056B9A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3FE30428462D18BEBCA6345 /* Pods-WeatherMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6952L9JMSG;
 				INFOPLIST_FILE = WeatherMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"SDWebImage\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rajivejain.com.WeatherMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WeatherMe/WeatherMe-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -441,6 +590,7 @@
 		};
 		83CE789C1FBE21B20056B9A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0A19885158FC94E4D658018 /* Pods-WeatherMeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -458,6 +608,7 @@
 		};
 		83CE789D1FBE21B20056B9A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7285713A2667C327838D52CA /* Pods-WeatherMeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
