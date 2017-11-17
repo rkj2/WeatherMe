@@ -8,7 +8,7 @@
 
 import Foundation
 
-class WeatherWebService {
+class WeatherWebService: Fetcher {
     
     func fetchWeather(for city: String?, completion: @escaping ([String: Any]) -> ()) {
         

@@ -9,14 +9,18 @@
 import Foundation
 import UIKit
 
+protocol Fetcher {
+    func fetchWeather(for city: String?, completion: @escaping ([String: Any]) -> ())
+}
+
 class WeatherDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     var tableView: UITableView
-    var weatherService: WeatherWebService
+    var weatherService: Fetcher
     var locationWeather: Weather?
     let persistenceService = PersistenceService()
     
-    init(with service: WeatherWebService, for view: UITableView) {
+    init(with service: Fetcher, for view: UITableView) {
         self.weatherService = service
         self.tableView = view
         super.init()
