@@ -25,23 +25,6 @@ class WeatherDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
         self.tableView = view
         super.init()
         self.addNotificationObservers()
-        
-    }
-    
-    fileprivate func addNotificationObservers() {
-        let nc = NotificationCenter.default
-        nc.addObserver(forName:Notification.Name(rawValue: "kSave"), object:nil, queue:nil, using:catchSaveNotification)
-        nc.addObserver(forName: Notification.Name(rawValue: "kFetch"), object: nil, queue: nil, using: catchFetchNotification)
-    }
-    
-    fileprivate func catchSaveNotification(notification:Notification) -> Void {
-        writeDataToDisk()
-    }
-    
-    fileprivate func catchFetchNotification(notification: Notification) -> Void {
-        if hasLastCity() {
-            fetchLastWeatherFromDisk()
-        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,14 +82,34 @@ extension WeatherDataSource {
             }
         }
     }
+}
+
+// MARK:- Persistence hooks
+
+extension WeatherDataSource {
+    fileprivate func addNotificationObservers() {
+        let nc = NotificationCenter.default
+        nc.addObserver(forName:Notification.Name(rawValue: "kSave"), object:nil, queue:nil, using:catchSaveNotification)
+        nc.addObserver(forName: Notification.Name(rawValue: "kFetch"), object: nil, queue: nil, using: catchFetchNotification)
+    }
     
-    func writeDataToDisk() {
+    fileprivate func catchSaveNotification(notification:Notification) -> Void {
+        writeDataToDisk()
+    }
+    
+    fileprivate func catchFetchNotification(notification: Notification) -> Void {
+        if hasLastCity() {
+            fetchLastWeatherFromDisk()
+        }
+    }
+    
+    fileprivate func writeDataToDisk() {
         if let weather = self.locationWeather {
             persistenceService.save(weather: weather)
         }
     }
     
-    func fetchLastWeatherFromDisk() {
+    fileprivate func fetchLastWeatherFromDisk() {
         if let lastWeather = persistenceService.getLastCityWeather() {
             self.locationWeather = lastWeather
             DispatchQueue.main.async {

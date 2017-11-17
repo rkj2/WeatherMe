@@ -15,6 +15,12 @@ class Weather : NSObject, NSCoding {
     var minTemperature: String
     var weather: [[String: Any]]?
     
+    let keyLocation = "location"
+    let keyHumidity = "humidity"
+    let keyMaxTemperature = "maxTemperature"
+    let keyMinTemperature = "minTemperature"
+    let keyWeatherArray = "weatherArray"
+    
     init?(json: [String: Any]) {
         guard
             let locationName = json["name"] as? String,
@@ -43,36 +49,23 @@ class Weather : NSObject, NSCoding {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        locationName = (aDecoder.decodeObject(forKey: "location") as? String)!
-        humidity = (aDecoder.decodeObject(forKey: "humidity") as? String)!
-        maxTemperature = (aDecoder.decodeObject(forKey: "maxTemperature") as? String)!
-        minTemperature = (aDecoder.decodeObject(forKey: "minTemperature") as? String)!
-        weather = aDecoder.decodeObject(forKey: "weatherArray") as? [[String: Any]]
+        locationName = (aDecoder.decodeObject(forKey: keyLocation) as? String)!
+        humidity = (aDecoder.decodeObject(forKey: keyHumidity) as? String)!
+        maxTemperature = (aDecoder.decodeObject(forKey: keyMaxTemperature) as? String)!
+        minTemperature = (aDecoder.decodeObject(forKey: keyMinTemperature) as? String)!
+        weather = aDecoder.decodeObject(forKey: keyWeatherArray) as? [[String: Any]]
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.locationName, forKey: "location")
-        aCoder.encode(self.humidity, forKey: "humidity")
-        aCoder.encode(self.maxTemperature, forKey: "maxTemperature")
-        aCoder.encode(self.minTemperature, forKey: "minTemperature")
-        aCoder.encode(self.weather, forKey: "weatherArray")
+        aCoder.encode(self.locationName, forKey: keyLocation)
+        aCoder.encode(self.humidity, forKey: keyHumidity)
+        aCoder.encode(self.maxTemperature, forKey: keyMaxTemperature)
+        aCoder.encode(self.minTemperature, forKey: keyMinTemperature)
+        aCoder.encode(self.weather, forKey: keyWeatherArray)
     }
-    
 }
 
-
 extension Weather {
-    var fullDescription: String {
-        var description = [String]()
-        for item in self.weather! {
-            let nextDescription = item["description"] as! String
-            description.append(nextDescription)
-        }
-        
-        let separator = ", "
-        let full  = description.joined(separator: separator)
-        return full
-    }
     
     var metricMinTemp: String {
         return "\(self.minTemperature) C"

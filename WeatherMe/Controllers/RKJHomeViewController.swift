@@ -23,14 +23,6 @@ class RKJHomeViewController : UIViewController {
         initializeServices()
     }
     
-    fileprivate func hasSavedCity() -> Bool {
-        return dataSource?.hasLastCity() == true
-    }
-    
-    fileprivate func fetchLastWeatherFromDisk() {
-        self.dataSource?.fetchLastWeatherFromDisk()
-    }
-    
     fileprivate func initializeServices() {
         self.dataSource = WeatherDataSource(with: weatherService, for: self.tableView)
         self.tableView.dataSource = self.dataSource
