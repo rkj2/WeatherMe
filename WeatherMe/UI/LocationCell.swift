@@ -11,11 +11,10 @@ import UIKit
 
 class LocationCell : UITableViewCell {
     
-    @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var minTempLabel: UILabel!
     @IBOutlet weak var maxTempLabel: UILabel!
-    @IBOutlet weak var weatherDescription: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,24 +22,19 @@ class LocationCell : UITableViewCell {
     
     func populate(with weather: Weather, at index: Int) {
         self.label.text = weather.locationName
-        self.weatherDescription.text = weather.fullDescription
-        let iconUrl = weather.weatherIconString(at: index)
-        if !iconUrl.isEmpty {
-            let completeUrl = WeatherWebService.urlString(for: iconUrl)
-            self.weatherIcon.sd_setImage(with: completeUrl)
+//        let iconUrl = weather.weatherIconString(at: index)
+//        if !iconUrl.isEmpty {
             self.minTempLabel.text = weather.metricMinTemp
             self.maxTempLabel.text = weather.metricMaxTemp
-            
-        }
+           self.humidityLabel.text = weather.humidityString
+//        }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.weatherIcon.image = nil
         self.minTempLabel.text = ""
         self.maxTempLabel.text = ""
         self.label.text = ""
-        self.weatherDescription.text = ""
     }
     
 }

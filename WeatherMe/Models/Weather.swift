@@ -64,4 +64,8 @@ extension Weather {
     var metricMaxTemp: String {
         return "\(self.maxTemperature) C"
     }
+    
+    var humidityString: String {
+        return "\(self.humidity)%"
+    }
 }
