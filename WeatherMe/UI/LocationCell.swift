@@ -18,5 +18,9 @@ class LocationCell : UITableViewCell {
         super.awakeFromNib()
     }
     
+    func populate(with weather: Weather) {
+        self.label.text = weather.locationName
+        
+    }
     
 }

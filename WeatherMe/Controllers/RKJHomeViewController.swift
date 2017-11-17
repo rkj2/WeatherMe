@@ -15,12 +15,14 @@ class RKJHomeViewController : UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    
     let weatherService = WeatherWebService()
     var dataSource: WeatherDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeServices()
+        initializeHeaderView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +35,11 @@ class RKJHomeViewController : UIViewController {
         self.dataSource = WeatherDataSource(with: weatherService, for: self.tableView)
         self.tableView.dataSource = self.dataSource
         self.tableView.delegate = self.dataSource
+    }
+    
+    private func initializeHeaderView() {
+//        let nib = UINib(nibName: "WeatherHeaderView", bundle: nil)
+//        self.tableView.register(nib, forHeaderFooterViewReuseIdentifier: "WeatherHeaderView")
     }
     
     @IBAction func searchTapped(_ sender: UIButton) {

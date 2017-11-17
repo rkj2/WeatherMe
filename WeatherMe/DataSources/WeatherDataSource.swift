@@ -22,7 +22,9 @@ class WeatherDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as! LocationCell
-        cell.label.text = "hello"
+        if self.locationWeather != nil {
+            cell.populate(with: self.locationWeather!)
+        }
         return cell
     }
     
@@ -39,6 +41,9 @@ class WeatherDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
         return 200
     }
     
+ 
+    
+    
 }
 
 extension WeatherDataSource {
@@ -46,7 +51,9 @@ extension WeatherDataSource {
         self.weatherService.fetchWeather(for: city) { (dictionary) in
             if let weather = Weather(json: dictionary) {
                 self.locationWeather = weather
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
     }

@@ -10,11 +10,10 @@ import Foundation
 
 struct Weather {
     var locationName: String
-    var mainWeather: String?
-    var icon: String?
     var humidity: String
     var maxTemperature: String
     var minTemperature: String
+    var weather: [[String: Any]]?
     
     init?(json: [String: Any]) {
         print("json before parsing \n \(json)")
@@ -31,10 +30,17 @@ struct Weather {
         self.maxTemperature = "\(mainDict["temp_max"]!)"
         self.minTemperature = "\(mainDict["temp_min"]!)"
         
-        if let weatherArrayFirst = weatherArray.first {
-            self.mainWeather = weatherArrayFirst["description"] as? String
-            self.icon = weatherArrayFirst["icon"] as? String
+        if weatherArray.count > 0 {
+            self.weather = weatherArray
         }
+    }
+    
+    func weatherIconString(at index: Int) -> String {
+        return self.weather![index]["icon"] as! String
+    }
+    
+    func weatherDescription(at index: Int) -> String {
+        return self.weather![index]["description"] as! String
     }
 }
 
