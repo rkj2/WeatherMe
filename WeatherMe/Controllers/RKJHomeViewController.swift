@@ -15,21 +15,23 @@ class RKJHomeViewController : UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    let weatherService = WeatherWebService()
-    var dataSource: WeatherDataSource?
+    private let weatherService = WeatherWebService()
+    private var dataSource: WeatherDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeServices()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tableView.reloadData()
+    fileprivate func hasSavedCity() -> Bool {
+        return dataSource?.hasLastCity() == true
     }
     
-    private func initializeServices()
-    {
+    fileprivate func fetchLastWeatherFromDisk() {
+        self.dataSource?.fetchLastWeatherFromDisk()
+    }
+    
+    fileprivate func initializeServices() {
         self.dataSource = WeatherDataSource(with: weatherService, for: self.tableView)
         self.tableView.dataSource = self.dataSource
         self.tableView.delegate = self.dataSource
@@ -38,7 +40,6 @@ class RKJHomeViewController : UIViewController {
     @IBAction func searchTapped(_ sender: UIButton) {
         self.searchField.resignFirstResponder()
         if let city = self.searchField.text {
-            print("\(city)")
             self.dataSource?.fetchData(for: city)
         }
     }

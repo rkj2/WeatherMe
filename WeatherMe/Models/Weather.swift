@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Weather {
+class Weather : NSObject, NSCoding {
     var locationName: String
     var humidity: String
     var maxTemperature: String
@@ -41,7 +41,25 @@ struct Weather {
     func weatherDescription(at index: Int) -> String {
         return self.weather![index]["description"] as! String
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        locationName = (aDecoder.decodeObject(forKey: "location") as? String)!
+        humidity = (aDecoder.decodeObject(forKey: "humidity") as? String)!
+        maxTemperature = (aDecoder.decodeObject(forKey: "maxTemperature") as? String)!
+        minTemperature = (aDecoder.decodeObject(forKey: "minTemperature") as? String)!
+        weather = aDecoder.decodeObject(forKey: "weatherArray") as? [[String: Any]]
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.locationName, forKey: "location")
+        aCoder.encode(self.humidity, forKey: "humidity")
+        aCoder.encode(self.maxTemperature, forKey: "maxTemperature")
+        aCoder.encode(self.minTemperature, forKey: "minTemperature")
+        aCoder.encode(self.weather, forKey: "weatherArray")
+    }
+    
 }
+
 
 extension Weather {
     var fullDescription: String {

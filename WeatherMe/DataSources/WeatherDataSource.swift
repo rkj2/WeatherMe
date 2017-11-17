@@ -14,10 +14,30 @@ class WeatherDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     var tableView: UITableView
     var weatherService: WeatherWebService
     var locationWeather: Weather?
+    let persistenceService = PersistenceService()
     
     init(with service: WeatherWebService, for view: UITableView) {
         self.weatherService = service
         self.tableView = view
+        super.init()
+        self.addNotificationObservers()
+        
+    }
+    
+    fileprivate func addNotificationObservers() {
+        let nc = NotificationCenter.default
+        nc.addObserver(forName:Notification.Name(rawValue: "kSave"), object:nil, queue:nil, using:catchSaveNotification)
+        nc.addObserver(forName: Notification.Name(rawValue: "kFetch"), object: nil, queue: nil, using: catchFetchNotification)
+    }
+    
+    fileprivate func catchSaveNotification(notification:Notification) -> Void {
+        writeDataToDisk()
+    }
+    
+    fileprivate func catchFetchNotification(notification: Notification) -> Void {
+        if hasLastCity() {
+            fetchLastWeatherFromDisk()
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -34,7 +54,6 @@ class WeatherDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
             return weatherCell
         }
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.locationWeather != nil {
@@ -56,6 +75,13 @@ class WeatherDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func hasLastCity() -> Bool {
+        if let _ = persistenceService.getLastCityWeather() {
+            return true
+        } else {
+            return false
+        }
+    }
 }
 
 extension WeatherDataSource {
@@ -63,10 +89,24 @@ extension WeatherDataSource {
         self.weatherService.fetchWeather(for: city) { (dictionary) in
             if let weather = Weather(json: dictionary) {
                 self.locationWeather = weather
-                print("weather array: \(self.locationWeather?.weather?.count)")
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
+            }
+        }
+    }
+    
+    func writeDataToDisk() {
+        if let weather = self.locationWeather {
+            persistenceService.save(weather: weather)
+        }
+    }
+    
+    func fetchLastWeatherFromDisk() {
+        if let lastWeather = persistenceService.getLastCityWeather() {
+            self.locationWeather = lastWeather
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
     }

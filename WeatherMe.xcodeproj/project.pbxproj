@@ -10,6 +10,7 @@
 		04214BEB3D27AB4ADB04084C /* Pods_WeatherMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC6C988363E6867B0F5D1E9 /* Pods_WeatherMeTests.framework */; };
 		1AE0BC78D02C80D7E62C3B53 /* Pods_WeatherMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDCF1D31E5E198A525C5980 /* Pods_WeatherMe.framework */; };
 		8345DB5B1FBE8E4700DF917A /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8345DB5A1FBE8E4700DF917A /* WeatherCell.swift */; };
+		8345DB5D1FBEA56800DF917A /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8345DB5C1FBEA56800DF917A /* PersistenceService.swift */; };
 		83CE787C1FBE21B10056B9A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CE787B1FBE21B10056B9A6 /* AppDelegate.swift */; };
 		83CE78811FBE21B10056B9A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CE787F1FBE21B10056B9A6 /* Main.storyboard */; };
 		83CE78841FBE21B10056B9A6 /* WeatherMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83CE78821FBE21B10056B9A6 /* WeatherMe.xcdatamodeld */; };
@@ -39,6 +40,7 @@
 		7285713A2667C327838D52CA /* Pods-WeatherMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherMeTests/Pods-WeatherMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		8345DB571FBE794900DF917A /* WeatherMe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeatherMe-Bridging-Header.h"; sourceTree = "<group>"; };
 		8345DB5A1FBE8E4700DF917A /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		8345DB5C1FBEA56800DF917A /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		83CE78781FBE21B10056B9A6 /* WeatherMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83CE787B1FBE21B10056B9A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83CE78801FBE21B10056B9A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				83CE78A61FBE2DCD0056B9A6 /* WeatherWebService.swift */,
+				8345DB5C1FBEA56800DF917A /* PersistenceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				8345DB5B1FBE8E4700DF917A /* WeatherCell.swift in Sources */,
 				83CE78AC1FBE3DB80056B9A6 /* LocationCell.swift in Sources */,
 				83CE787C1FBE21B10056B9A6 /* AppDelegate.swift in Sources */,
+				8345DB5D1FBEA56800DF917A /* PersistenceService.swift in Sources */,
 				83CE78A91FBE3CF00056B9A6 /* WeatherDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
